@@ -2,6 +2,7 @@ CC=gcc
 CFLAGS=-Wall
 SOURCES=src/main.c
 TARGET=bin/crc
+DESTDIR=/usr/local/bin
 
 default: all
 
@@ -15,4 +16,10 @@ build:
 
 clean:
 	rm -v $(TARGET)
+
+install:
+	install bin/crc $(DESTDIR)
+
+uninstall:
+	rm -v $(DESTDIR)/crc
 	
